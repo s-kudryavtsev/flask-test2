@@ -64,7 +64,7 @@ def create():
         try:
             db.session.add(article)
             db.session.commit()
-            return redirect ('/')
+            return redirect('/')
         except:
             return "Произошла ошибка!"
     else:
