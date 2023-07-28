@@ -1,18 +1,18 @@
 {% extends 'base.html' %}
 
 {% block title %} 
-Про нас
+Добавить статью
 {% endblock %} 
 
 
 {% block body %} 
-<div class="container">
-<h1>Добавление строки</h1>
+<div class="container mt-5">
+<h1>Добавление статьи</h1>
 <form methon="POST">
-    <input type="text" name="title" id="title" class="form-control"><br>
-    <textarea name="intro" id="intro" class="form-control"></textarea><br> 
-    <textarea name="text" id="text" class="form-control"></textarea><br> 
-    <input type="submit" class="btn btn-success" value="Отправить">
+    <input type="text" name="title" id="title" class="form-control" placeholder="Введите название статьи"><br>
+    <textarea name="intro" id="intro" class="form-control" placeholder="Вводный текст"></textarea><br> 
+    <textarea name="text" id="text" class="form-control" placeholder="Введите текст"></textarea><br> 
+    <button class="btn btn-success" type="submit">Добавить статью</button>
 </form>
 </div>
 {% endblock %} 

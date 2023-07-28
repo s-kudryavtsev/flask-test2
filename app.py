@@ -52,9 +52,23 @@ def index():
 def about():
     return render_template('about.html')
 
-@app.route('/create')
+@app.route('/create', methods=['POST', 'GET'])
 def create():
-    return render_template('create.html')
+    if request.method == 'POST':
+        title = request.form['title']
+        intro = request.form['intro']
+        text = request.form['text']
+
+        article = Article(title=title, intro=intro, text=text)
+
+        try:
+            db.session.add(article)
+            db.session.commit()
+            return redirect ('/')
+        except:
+            return "Произошла ошибка!"
+    else:
+        return render_template('create.html')
 
 
 
